@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="LAKIY ABAYA — premium women's abayas, tailoring and sewing services. Secure business document submission portal.">
+<title>LAKIY ABAYA | Business Document Portal</title>
+<link rel="icon" href="assets/lakiy-abaya-logo.jpeg">
+<style>
+:root{
+  --gold:#d9b15c; --gold2:#f3d58a; --ink:#101010; --cream:#faf7f0;
+  --muted:#746f66; --line:#e8dfcf; --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(16,16,16,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(217,177,92,.35)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;letter-spacing:.14em}
+.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid var(--gold)}
+.navlinks{display:flex;gap:24px;color:#eee;font-size:14px}
+.navlinks a:hover{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:13px 21px;font-weight:800;cursor:pointer;transition:.2s}
+.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(217,177,92,.25)}
+.btn-dark{background:#111;color:#fff;border:1px solid #333}
+.hero{padding:82px 0 70px;background:
+ radial-gradient(circle at 85% 20%,rgba(217,177,92,.16),transparent 28%),
+ linear-gradient(135deg,#111 0%,#17130d 55%,#0e0e0e 100%);color:#fff}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:55px}
+.eyebrow{color:var(--gold2);font-weight:900;letter-spacing:.2em;text-transform:uppercase;font-size:12px}
+h1{font-family:Georgia,serif;font-size:clamp(42px,6vw,78px);line-height:.98;margin:16px 0 22px}
+.hero p{color:#ddd;max-width:650px;font-size:18px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.logo-card{display:flex;justify-content:center}
+.logo-card img{width:min(360px,85%);aspect-ratio:1;border-radius:50%;object-fit:cover;border:5px solid var(--gold);box-shadow:0 0 0 12px rgba(217,177,92,.08),0 30px 70px rgba(0,0,0,.45)}
+section{padding:78px 0}
+.section-title{text-align:center;margin-bottom:42px}
+.section-title .eyebrow{color:#9a762c}
+.section-title h2{font-family:Georgia,serif;font-size:42px;margin:7px 0}
+.section-title p{color:var(--muted);margin:auto;max-width:680px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 12px 35px rgba(33,25,10,.05)}
+.icon{width:48px;height:48px;border-radius:15px;background:#f5ead0;display:grid;place-items:center;font-size:23px;margin-bottom:16px}
+.card h3{margin:0 0 8px;font-family:Georgia,serif;font-size:23px}
+.card p{color:var(--muted);margin:0}
+.portal{background:#111;color:#fff}
+.portal-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}
+.portal-copy h2{font-family:Georgia,serif;font-size:45px;line-height:1.05;margin:10px 0 15px}
+.portal-copy p{color:#cfcfcf}
+.checks{padding:0;margin:25px 0;list-style:none}
+.checks li{margin:11px 0;color:#eee}
+.checks li::before{content:"✓";color:var(--gold2);font-weight:900;margin-right:10px}
+.upload-box{background:#fff;color:#111;border-radius:26px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.dropzone{border:2px dashed #d7c6a2;border-radius:20px;padding:34px;text-align:center;background:#fffaf0;cursor:pointer}
+.dropzone.drag{background:#f6eddc;border-color:var(--gold)}
+.dropzone strong{display:block;font-size:19px}
+.dropzone span{display:block;color:#777;margin-top:6px;font-size:14px}
+input[type=file]{display:none}
+.file-list{margin-top:16px;display:grid;gap:9px}
+.file-row{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:13px;background:#fff}
+.file-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}
+.remove{border:0;background:#f3f0eb;border-radius:8px;padding:5px 9px;cursor:pointer}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+label{font-size:13px;font-weight:800}
+input[type=text],input[type=email],textarea{width:100%;margin-top:6px;border:1px solid #ddd4c4;border-radius:12px;padding:12px 13px;font:inherit;outline:none}
+textarea{min-height:90px;resize:vertical}
+.full{grid-column:1/-1}
+.status{margin-top:12px;color:#6d644f;font-size:13px;min-height:20px}
+.contact{background:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.contact-card{border:1px solid var(--line);border-radius:22px;padding:28px;background:#fff}
+.contact-card h3{font-family:Georgia,serif;font-size:25px;margin-top:0}
+.contact-row{display:flex;gap:13px;align-items:flex-start;margin:15px 0}
+.contact-row b{display:block}
+.contact-row span{color:var(--muted);font-size:14px}
+.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.socials a{padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:#faf8f3;font-weight:800;font-size:13px}
+footer{background:#0d0d0d;color:#bbb;padding:35px 0}
+.footer-grid{display:flex;justify-content:space-between;gap:20px;align-items:center}
+footer strong{color:#fff}
+.small{font-size:12px;color:#777}
+@media(max-width:850px){
+ .navlinks{display:none}.hero-grid,.portal-grid,.contact-grid{grid-template-columns:1fr}
+ .cards{grid-template-columns:1fr}.hero{padding-top:55px}.logo-card{order:-1}
+}
+@media(max-width:560px){
+ .form-grid{grid-template-columns:1fr}.full{grid-column:auto}
+ .footer-grid{flex-direction:column;align-items:flex-start}
+ h1{font-size:49px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top"><img src="assets/lakiy-abaya-logo.jpeg" alt="LAKIY ABAYA logo"><span>LAKIY ABAYA</span></a>
+    <nav class="navlinks">
+      <a href="#about">About</a><a href="#services">Services</a><a href="#upload">Documents</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-gold" href="#upload">Upload Documents</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+    <div class="eyebrow">LAKIY SAYIDATI WOMEN ABAYAS</div>
+    <h1>Elegance, tailored with purpose.</h1>
+    <p>Premium women’s abayas, tailoring and sewing services — presented through a refined digital business portal for customers, partners and document submissions.</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#upload">Submit Documents</a>
+      <a class="btn btn-dark" href="#contact">Contact Business</a>
+    </div>
+  </div>
+  <div class="logo-card"><img src="assets/lakiy-abaya-logo.jpeg" alt="Lakiy Abaya gold logo"></div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="container">
+  <div class="section-title">
+   <div class="eyebrow">ABOUT THE BUSINESS</div>
+   <h2>LAKIY ABAYA</h2>
+   <p>A sophisticated online presence for a women’s abaya and tailoring business, with a dedicated area for secure document preparation and submission.</p>
+  </div>
+  <div class="cards">
+   <div class="card"><div class="icon">✦</div><h3>Abaya Collection</h3><p>Elegant women’s Arab clothing and abayas with a premium, boutique-focused presentation.</p></div>
+   <div class="card"><div class="icon">✂</div><h3>Tailoring & Sewing</h3><p>Professional tailoring and sewing services for women’s Arab clothes and abayas.</p></div>
+   <div class="card"><div class="icon">◇</div><h3>Business Portal</h3><p>Simple, polished document intake for customer, supplier and business administration workflows.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="services" style="background:#f1ecdf">
+ <div class="container">
+  <div class="section-title">
+   <div class="eyebrow">BUSINESS PROFILE</div>
+   <h2>Designed for a premium experience</h2>
+   <p>The visual identity follows the supplied LAKIY ABAYA logo: black, warm gold and refined editorial typography.</p>
+  </div>
+  <div class="cards">
+   <div class="card"><div class="icon">01</div><h3>Women’s Abayas</h3><p>Trade name: LAKIY SAYIDATI WOMEN ABAYAS.</p></div>
+   <div class="card"><div class="icon">02</div><h3>Professional Service</h3><p>Tailoring and sewing women Arab clothes (Women Abayas).</p></div>
+   <div class="card"><div class="icon">03</div><h3>Easy Communication</h3><p>Direct phone, email and social-media channels for customer support.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="upload" class="portal">
+ <div class="container portal-grid">
+  <div class="portal-copy">
+   <div class="eyebrow">DOCUMENT PORTAL</div>
+   <h2>Upload your business documents.</h2>
+   <p>Select one or multiple documents. The interface checks file type and size, shows the selected files, and prepares the submission details.</p>
+   <ul class="checks">
+    <li>PDF, JPG, JPEG, PNG and DOC/DOCX supported</li>
+    <li>Up to 10 files per submission</li>
+    <li>Maximum 10 MB per file</li>
+    <li>Drag & drop supported on desktop</li>
+   </ul>
+   <p class="small">Note: this website is frontend-only. To receive files on the business side, connect the form to a secure backend, cloud storage or form service before publishing.</p>
+  </div>
+  <div class="upload-box">
+   <div id="dropzone" class="dropzone" tabindex="0">
+    <strong>Drop documents here</strong>
+    <span>or click to browse your device</span>
+    <input id="files" type="file" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+   </div>
+   <div id="fileList" class="file-list"></div>
+   <div class="form-grid">
+    <div><label for="name">Full Name</label><input id="name" type="text" placeholder="Your name"></div>
+    <div><label for="email">Email</label><input id="email" type="email" placeholder="your@email.com"></div>
+    <div class="full"><label for="message">Message</label><textarea id="message" placeholder="Tell us what the documents are for..."></textarea></div>
+   </div>
+   <button id="submitBtn" class="btn btn-gold" style="width:100%;margin-top:16px">Prepare Submission</button>
+   <div id="status" class="status"></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact" class="contact">
+ <div class="container">
+  <div class="section-title">
+   <div class="eyebrow">CONTACT</div>
+   <h2>Let’s connect</h2>
+   <p>For orders, business enquiries and document-submission support, contact LAKIY ABAYA directly.</p>
+  </div>
+  <div class="contact-grid">
+   <div class="contact-card">
+    <h3>Business Contact</h3>
+    <div class="contact-row"><div>☎</div><div><b>Phone / WhatsApp</b><span>+971 55 328 6811</span></div></div>
+    <div class="contact-row"><div>✉</div><div><b>Email</b><span>mbelaluddin250@gmail.com</span></div></div>
+    <div class="contact-row"><div>⌂</div><div><b>Business</b><span>LAKIY SAYIDATI WOMEN ABAYAS</span></div></div>
+    <div class="socials">
+      <a href="https://www.instagram.com/lakiy_abaya_4/?stkn=MTdsMTQ4Yndmb2E3MQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@lakiy244abayaholesale?_r=1&_t=ZS-99mppG0azvc" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/share/18XFH1ZciS/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+    </div>
+   </div>
+   <div class="contact-card">
+    <h3>Business Details</h3>
+    <div class="contact-row"><div>◈</div><div><b>Professional License</b><span>No. 104224</span></div></div>
+    <div class="contact-row"><div>▣</div><div><b>Legal Form</b><span>Sole Establishment</span></div></div>
+    <div class="contact-row"><div>✦</div><div><b>Activity</b><span>Tailoring and Sewing Women Arab Clothes (Women Abayas)</span></div></div>
+    <a class="btn btn-gold" style="margin-top:10px" href="mailto:mbelaluddin250@gmail.com">Email LAKIY ABAYA</a>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-grid">
+  <div><strong>LAKIY ABAYA</strong><br><span class="small">Women’s Abayas • Tailoring • Sewing • Business Document Portal</span></div>
+  <div class="small">© 2026 LAKIY ABAYA. All rights reserved.</div>
+ </div>
+</footer>
+
+<script>
+const input = document.getElementById('files');
+const drop = document.getElementById('dropzone');
+const list = document.getElementById('fileList');
+const status = document.getElementById('status');
+const submitBtn = document.getElementById('submitBtn');
+let selected = [];
+
+const maxFiles = 10, maxSize = 10 * 1024 * 1024;
+const allowed = ['pdf','jpg','jpeg','png','doc','docx'];
+
+function addFiles(files){
+  for(const file of files){
+    const ext = file.name.split('.').pop().toLowerCase();
+    if(selected.length >= maxFiles){ status.textContent = 'Maximum 10 files per submission.'; break; }
+    if(!allowed.includes(ext)){ status.textContent = `${file.name}: file type is not supported.`; continue; }
+    if(file.size > maxSize){ status.textContent = `${file.name}: maximum file size is 10 MB.`; continue; }
+    if(!selected.some(f => f.name === file.name && f.size === file.size)) selected.push(file);
+  }
+  render();
+}
+function render(){
+  list.innerHTML='';
+  selected.forEach((f,i)=>{
+    const row=document.createElement('div'); row.className='file-row';
+    const mb=(f.size/1024/1024).toFixed(2);
+    row.innerHTML=`<span class="file-name">${f.name} <small>(${mb} MB)</small></span><button class="remove" type="button">Remove</button>`;
+    row.querySelector('button').onclick=()=>{selected.splice(i,1);render()};
+    list.appendChild(row);
+  });
+  if(selected.length) status.textContent = `${selected.length} document${selected.length>1?'s':''} selected.`;
+  else status.textContent = '';
+}
+drop.addEventListener('click',()=>input.click());
+drop.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ') input.click()});
+input.addEventListener('change',e=>addFiles(e.target.files));
+['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag')}));
+['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('drag')}));
+drop.addEventListener('drop',e=>addFiles(e.dataTransfer.files));
+
+submitBtn.addEventListener('click',()=>{
+  const name=document.getElementById('name').value.trim();
+  const email=document.getElementById('email').value.trim();
+  if(!name || !email){status.textContent='Please enter your name and email before preparing the submission.';return}
+  if(!selected.length){status.textContent='Please select at least one document.';return}
+  const subject=encodeURIComponent('LAKIY ABAYA — Document Submission');
+  const body=encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\nDocuments: ${selected.map(f=>f.name).join(', ')}\n\nMessage:\n${document.getElementById('message').value}`
+  );
+  window.location.href=`mailto:mbelaluddin250@gmail.com?subject=${subject}&body=${body}`;
+  status.textContent='Your email client should open with the submission details. Attach the selected files to the email before sending.';
+});
+</script>
+</body>
+</html>
